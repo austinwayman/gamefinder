@@ -7,7 +7,9 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-var searchTerm = $("#findButton").val().trim();
+
+
+
 
 var apiKey = "777df2480edd4e6fb87cb0ce9a5ba5bb"
 var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb"
@@ -35,7 +37,7 @@ $.ajax({
   console.log(articleLink);
   console.log(articleAuthor);
   console.log(articleTitle);
-  
+
 var $row = $("<div row>")
   
   $("$row").append(articleTitle, articleAuthor, snippet, articleLink);
