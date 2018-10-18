@@ -55,3 +55,10 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+#gameNameSearch {
+  width: 250px;
+  align-content: center;
+  color: rgba(255,255,255,.9);
+  margin: auto;
+}
