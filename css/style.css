@@ -62,3 +62,20 @@ footer.page-footer {
   color: rgba(255,255,255,.9);
   margin: auto;
 }
+
+img {
+  margin: 20px 5px 0px 5px;
+}
+
+.textColumn {
+  padding: 0px 10px 10px 40px;
+}
+
+p {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
