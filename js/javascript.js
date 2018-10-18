@@ -67,7 +67,7 @@ database.ref().on("child_added", function(snapshot){
 
 $(document).on("click", "#searchTerm", function(event){
     
-    event.peventDefault();
+    event.preventDefault();
 
     console.log($("#searchTerm").val()); 
     var searchTerm = $("#searchTerm").val();
