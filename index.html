@@ -1,164 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Parallax Template - Materialize</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameFinder</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+
 </head>
+
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
+
+
+
+
+
+
+
+
+
+    <!-- navbar start-->
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo"><i class="fas fa-gamepad"></i></a>
+            <!-- <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
-
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+    </div> -->
+    </nav>
+    <!-- navbar end -->
 
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-        <div class="row center">
+
+
+
+
+
+    <!-- first parallax jumpbtron -->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">GameFinder</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern way to search for games and get the information you
+                        really want.</h5>
+                </div>
+                <div class="row center">
+                    <div class="container">
+                        <form action="/action_page.php">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="gameNameSearch" placeholder="Search Games Here">
+                            </div>
+                        </form>
+                    </div>
+                    <a href="#" id="find-button" class="btn-large waves-effect waves-light teal lighten-1">Find</a>
+                </div>
+                <br><br>
+
+            </div>
+        </div>
+        <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+    <!-- end of top parallax jumbotron -->
+
+
+
+
+    <!-- start of news articles -->
+    <div class="container-fluid">
+
+
+        <!-- buttons start -->
+        <div class="row">
+            <div class="col s12" id="buttonRender">
+            </div>
+        </div>
+        <!-- buttons end -->
+
+
+        <hr>
+        <div class="row">
+            <!-- <div class="col-md-4">
+                <img alt="Bootstrap Image Preview" src="images/rdrcover.jpg" />
+            </div> -->
+            <div class="containerImg">
+                <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+                    <img src="images/rdrcover.jpg" class="img-responsive">
+                </div>
+            </div>
+            <div class="textColumn col-md-8">
+                <div class="page-header">
+                    <h3 class="newsTitle">
+                        <span id="articleTitle"></span>
+                        News Title
+                        <!-- <small>Interface Builder for Bootstrap</small> -->
+                    </h3>
+                </div>
+                <h4>
+                    Publish Date: <span id="publishDate">01/01/2001</span>
+                </h4>
+                <h4>
+                    Article Author: <span id="articleAuthor">Austin Wayman</span>
+                </h4>
+                <h4>
+                    Description:
+                </h4>
+                <span id="snippet"></span>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Continue Reading</a>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="row">
+            <!-- <div class="col-md-4">
+                    <img alt="Bootstrap Image Preview" src="images/rdrcover.jpg" />
+                </div> -->
+            <div class="containerImg">
+                <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+                    <img src="images/rdrcover.jpg" class="img-responsive">
+                </div>
+            </div>
+            <div class="textColumn col-md-8">
+                <div class="page-header">
+                    <h3 class="newsTitle">
+                        <span id="articleTitle"></span>
+                        News Title
+                        <!-- <small>Interface Builder for Bootstrap</small> -->
+                    </h3>
+                </div>
+                <h4>
+                    Publish Date: <span id="publishDate">01/01/2001</span>
+                </h4>
+                <h4>
+                    Article Author: <span id="articleAuthor">Austin Wayman</span>
+                </h4>
+                <h4>
+                    Description:
+                </h4>
+                <span id="snippet"></span>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Continue Reading</a>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <!-- <div class="col-md-4">
+                        <img alt="Bootstrap Image Preview" src="images/rdrcover.jpg" />
+                    </div> -->
+            <div class="containerImg">
+                <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+                    <img src="images/rdrcover.jpg" class="img-responsive">
+                </div>
+            </div>
+            <div class="textColumn col-md-8">
+                <div class="page-header">
+                    <h3 class="newsTitle">
+                        <span id="articleTitle"></span>
+                        News Title
+                        <!-- <small>Interface Builder for Bootstrap</small> -->
+                    </h3>
+                </div>
+                <h4>
+                    Publish Date: <span id="publishDate">01/01/2001</span>
+                </h4>
+                <h4>
+                    Article Author: <span id="articleAuthor">Austin Wayman</span>
+                </h4>
+                <h4>
+                    Description:
+                </h4>
+                <span id="snippet"></span>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Continue Reading</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of news articles -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--   Icon Section   -->
+    <!-- <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Speeds up development</h5>
+                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that
+                            incorporate our custom components. Additionally, we refined animations and transitions to
+                            provide a smoother experience for developers.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">User Experience Focused</h5>
+                        <p class="light">By utilizing elements and principles of Material Design, we were able to
+                            create a framework that incorporates components and animations that provide more feedback
+                            to users. Additionally, a single underlying responsive system across all platforms allow
+                            for a more unified user experience.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Easy to work with</h5>
+                        <p class="light">We have provided detailed documentation as well as specific code examples to
+                            help new users get started. We are also always open to feedback and can answer any
+                            questions a user may have about Materialize.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- icon section end -->
+
+
+
+    <!-- Twitch parallax start -->
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <!-- <div class="row center">
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div> -->
+            </div>
         </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
-        <br><br>
-
-      </div>
+        <div class="parallax"><img src="images/twitchbackground.png" alt="Unsplashed background img 3"></div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
-  </div>
+    <!-- twitch parallax end -->
 
 
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
 
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer teal">
+    <!-- insert twitch streams here  -->
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        <div class="section">
 
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Top Twitch Streamers</h4>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
+                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
+                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
+                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                        cubilia Curae;</p>
+                </div>
+            </div>
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
+    <!-- end of twitch streams -->
+
+
+
+
+
+    <!-- comic con parallax start -->
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="images/comiccon.jpg" alt="Unsplashed background img 2"></div>
     </div>
-  </footer>
+    <!-- comic con parallax start -->
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
 
-  </body>
+
+
+    <!-- text area start -->
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Youtube/Trailers</h4>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
+                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
+                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
+                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                        cubilia Curae;</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- text area end -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">API's Used</h5>
+                    <p class="grey-text text-lighten-4">Insert information about API's used here</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="#">Game Finder LLC.</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="javascript.js"></script>
+
+</body>
+
 </html>
