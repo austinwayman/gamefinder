@@ -67,7 +67,7 @@ database.ref().on("child_added", function(snapshot){
 
 $(document).on("click", "#searchTerm", function(event){
     
-    even.peventDefault();
+    event.peventDefault();
 
     console.log($("#searchTerm").val()); 
     var searchTerm = $("#searchTerm").val();
