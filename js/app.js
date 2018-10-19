@@ -108,7 +108,7 @@ $(document).on("click", ".searchTerm", function (event) {
     var searchTerm = $(this).val();
     var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
-    // populate screen
+    // populate  screen
     $.ajax({
         url: queryURL,
         method: "GET",
