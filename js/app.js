@@ -34,7 +34,7 @@ function createButtons(value) {
 
 }
 
-database.ref().on("child_added", function (snapshot) {
+database.ref().orderByChild("dateAdded").limitToLast(5).on("child_added", function (snapshot) {
     createButtons(snapshot.val().searchTerm);
 });
 
@@ -112,9 +112,9 @@ function createButtons(value) {
 
 }
 
-database.ref().on("child_added", function (snapshot) {
-    createButtons(snapshot.val().searchTerm);
-});
+// database.ref().on("child_added", function (snapshot) {
+//     createButtons(snapshot.val().searchTerm);
+// });
 
 $(document).on("click", ".searchTerm", function (event) {
 
