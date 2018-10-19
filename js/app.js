@@ -36,6 +36,7 @@ database.ref().orderByChild("dateAdded").limitToLast(5).on("child_added", functi
 
 $("#banner").on("submit", function (e) {
     e.preventDefault();
+    $(".row-artist").removeClass("hide");
     console.log("submitted!");
 
     var searchTerm = $("#gameNameSearch").val();
