@@ -116,7 +116,7 @@ $(document).on("click", ".searchTerm", function (event) {
 function renderGameInfo(response) {
     console.log(response.description);
 
-    $(".articleTitle").text(response.title);
+    $("#articleTitle").text(response.title);
     $("#publishDate").text(response.publishedAt);
     $("#articleAuthor").text(response.author);
     $(".actualSnippet").text(response.description);
