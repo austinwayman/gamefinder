@@ -54,7 +54,7 @@ $("#banner").on("submit", function (e) {
         console.log(response)
         var i;
         for (i = 0; i < response.articles.length; i++)
-            console.log(response.articles[i].description);
+            renderGameInfo(response.articles[i]);
 
     })
 
@@ -79,26 +79,16 @@ $("#find-button").on("click", function (event) {
         console.log(response)
         var i;
         for (i = 0; i < response.articles.length; i++)
-            console.log(response.articles[i].description);
+            renderGameInfo(response.articles[i]);
 
     })
 
+
 });
 
-// gonna pass this over to the firebase area but for now just test on the click
-function createButtons(value) {
-    var $divSpot = $("#buttonRender");
-
-    var $button = $("<button>");
-
-    $button.attr("href", "#");
-    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm");
-    $button.attr("value", value);
-    $button.text(value);
-
-    $divSpot.append($button);
-
-}
+$(document).on("click", ".btn-search", function () {
+    $(".row-artist").removeClass("hide");
+})
 
 $(document).on("click", ".searchTerm", function (event) {
 
@@ -108,7 +98,7 @@ $(document).on("click", ".searchTerm", function (event) {
     var searchTerm = $(this).val();
     var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
-    // populate  screen
+    // populate screen
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -116,7 +106,34 @@ $(document).on("click", ".searchTerm", function (event) {
         console.log(response)
         var i;
         for (i = 0; i < response.articles.length; i++)
-            console.log(response.articles[i].description);
+            renderGameInfo(response.articles[i]);
 
     })
-})
+});
+
+function renderGameInfo(response) {
+    console.log(response.description);
+
+    $(".articleTitle").text(response.title);
+    $("#publishDate").text(response.publishedAt);
+    $("#articleAuthor").text(response.author);
+    $(".actualSnippet").text(response.description);
+    $(".img-responsive").attr("src", response.urlToImage);
+
+    $(".linkButton").attr("href", response.url);
+    $(".linkButton").attr("target", "_blank");
+}
+
+function createButtons(value) {
+    var $divSpot = $("#buttonRender");
+
+    var $button = $("<button>");
+
+    $button.attr("href", "#");
+    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm btn-search");
+    $button.attr("value", value);
+    $button.text(value);
+
+    $divSpot.append($button);
+
+}
