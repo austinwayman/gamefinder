@@ -62,6 +62,7 @@
    color:black;
    margin: auto;
    background: rgba(255,255,255,0.5);
+   text-align: center;
  }
  
  img {
@@ -86,3 +87,17 @@
    opacity: 1;
    text-align: center;
  }
+
+ .genButtons {
+   text-align: center;
+   margin: 15px;
+ }
+
+.btn-large {
+   margin: 10px;
+ }
+
+ .hide {
+  display:none;
+}
+

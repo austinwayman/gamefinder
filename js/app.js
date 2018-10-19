@@ -82,8 +82,13 @@ $("#find-button").on("click", function (event) {
             console.log(response.articles[i].description);
 
     })
+   
 
 });
+
+$(document).on("click", ".btn-search", function(){
+    $(".row-artist").removeClass("hide");
+})
 
 // gonna pass this over to the firebase area but for now just test on the click
 function createButtons(value) {
@@ -92,7 +97,7 @@ function createButtons(value) {
     var $button = $("<button>");
 
     $button.attr("href", "#");
-    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm");
+    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm btn-search");
     $button.attr("value", value);
     $button.text(value);
 
@@ -119,4 +124,11 @@ $(document).on("click", ".searchTerm", function (event) {
             console.log(response.articles[i].description);
 
     })
-})
+});
+
+// $(document).ready(function(){
+//     $("#find-button").click(function(){
+        
+
+//     });
+// });
