@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,7 +7,7 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
 </head>
-
 <body>
     <!-- navbar start-->
     <nav class="white" role="navigation">
@@ -51,7 +49,7 @@
                             </div>
                         </form>
                     </div>
-                    <a href="#" id="find-button" class="btn-large waves-effect waves-light teal lighten-1">Find</a>
+                    <a href="#" id="find-button" class="btn-large waves-effect waves-light teal lighten-1 btn-search">Find</a>
                 </div>
                 <br><br>
             </div>
@@ -62,13 +60,13 @@
     <!-- start of news articles -->
     <div class="container-fluid">
         <!-- buttons start -->
-        <div class="row">
-            <div class="col s12" id="buttonRender">
+        <div class="row genButtons">
+            <div class="col-s-12" id="buttonRender">
             </div>
         </div>
         <!-- buttons end -->
         <hr>
-        <div class="row row-artist">
+        <div class="row row-artist hide">
             <!-- <div class="col-md-4">
                 <img alt="Bootstrap Image Preview" src="images/rdrcover.jpg" />
             </div> -->
@@ -95,12 +93,12 @@
                     Description:
                 </h4>
                 <span id="snippet"></span>
-                <p>
+                <p class="actualSnippet">
                     Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
                     mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
                     mollis euismod. Donec sed odio dui.
                 </p>
-                <a class="btn btn-primary" href="#" role="button">Continue Reading</a>
+                <a class="btn btn-primary linkButton" href="#" role="button">Continue Reading</a>
             </div>
         </div>
         <hr>
@@ -223,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright">
+            <div class="footer-copyright hide">
                 <div class="container">
                     Made by <a class="brown-text text-lighten-3" href="#">Game Finder LLC.</a>
                 </div>
@@ -238,5 +236,4 @@
         <script src="js/init.js"></script>
         <script src="js/app.js"></script>
 </body>
-
 </html>
