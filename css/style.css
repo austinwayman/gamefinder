@@ -6,76 +6,83 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.sidenav-trigger {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
-}
-
-#gameNameSearch {
-  width: 250px;
-  align-content: center;
-  color: rgba(255,255,255,.9);
-  margin: auto;
-}
-
-img {
-  margin: 20px 5px 0px 5px;
-}
-
-.textColumn {
-  padding: 0px 10px 10px 40px;
-}
-
-p {
-  font-size: 16px;
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: bold;
-}
+ nav ul a,
+ nav .brand-logo {
+   color: #444;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+ 
+ .sidenav-trigger {
+   color: #26a69a;
+ }
+ 
+ .parallax-container {
+   min-height: 380px;
+   line-height: 0;
+   height: auto;
+   color: rgba(255,255,255,.9);
+ }
+   .parallax-container .section {
+     width: 100%;
+   }
+ 
+ @media only screen and (max-width : 992px) {
+   .parallax-container .section {
+     position: absolute;
+     top: 40%;
+   }
+   #index-banner .section {
+     top: 10%;
+   }
+ }
+ 
+ @media only screen and (max-width : 600px) {
+   #index-banner .section {
+     top: 0;
+   }
+ }
+ 
+ .icon-block {
+   padding: 0 15px;
+ }
+ .icon-block .material-icons {
+   font-size: inherit;
+ }
+ 
+ footer.page-footer {
+   margin: 0;
+ }
+ 
+ #gameNameSearch {
+   width: 250px;
+   align-content: center;
+   color:black;
+   margin: auto;
+   background: rgba(255,255,255,0.5);
+ }
+ 
+ img {
+   margin: 20px 5px 0px 5px;
+ }
+ 
+ .textColumn {
+   padding: 0px 10px 10px 40px;
+ }
+ 
+ p {
+   font-size: 16px;
+ }
+ 
+ h4 {
+   font-size: 20px;
+   font-weight: bold;
+ }
+ 
+ input::-webkit-input-placeholder {
+   color: #444 !important;
+   opacity: 1;
+   text-align: center;
+ }
