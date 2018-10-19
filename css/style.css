@@ -86,3 +86,7 @@ input::-webkit-input-placeholder {
   opacity: 1;
   text-align: center;
 }
+
+#buttonRender {
+  margin: 0 auto;
+}
