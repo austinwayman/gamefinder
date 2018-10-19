@@ -1,6 +1,3 @@
-
-// FireBase Info
-
 var config = {
     apiKey: "AIzaSyB8Eza7nSWdUNHJobfNN6tQcmXzYklpIlc",
     authDomain: "project1-group.firebaseapp.com",
@@ -17,8 +14,6 @@ var apiKey = "777df2480edd4e6fb87cb0ce9a5ba5bb"
 var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=overwatch&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb"
 
 
-
-// gonna pass this over to the firebase area but for now just test on the click
 function createButtons(value) {
     var $divSpot = $("#buttonRender");
 
@@ -42,13 +37,9 @@ database.ref().orderByChild("dateAdded").limitToLast(5).on("child_added", functi
 $("#banner").on("submit", function (e) {
     e.preventDefault();
     console.log("submitted!");
-    // event.preventDefault();
 
     var searchTerm = $("#gameNameSearch").val();
 
-    // createButtons(searchTerm);
-
-    // create buttons for searches. Then store that in the firebase database, use fire base data base to make the buttons and render them onto the screen.
 
     var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
@@ -70,13 +61,10 @@ $("#banner").on("submit", function (e) {
 });
 
 $("#find-button").on("click", function (event) {
-    // event.preventDefault();
+    event.preventDefault();
 
     var searchTerm = $("#gameNameSearch").val();
-
-    // createButtons(searchTerm);
-
-    // create buttons for searches. Then store that in the firebase database, use fire base data base to make the buttons and render them onto the screen.
+    console.log(searchTerm);
 
     var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
@@ -112,10 +100,6 @@ function createButtons(value) {
 
 }
 
-// database.ref().on("child_added", function (snapshot) {
-//     createButtons(snapshot.val().searchTerm);
-// });
-
 $(document).on("click", ".searchTerm", function (event) {
 
     event.preventDefault();
@@ -124,7 +108,7 @@ $(document).on("click", ".searchTerm", function (event) {
     var searchTerm = $(this).val();
     var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
-
+    // populate screen
     $.ajax({
         url: queryURL,
         method: "GET",

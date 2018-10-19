@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
 </head>
+
 <body>
     <!-- navbar start-->
     <nav class="white" role="navigation">
@@ -43,7 +45,7 @@
                 </div>
                 <div class="row center">
                     <div class="container">
-                        <form action="/action_page.php">
+                        <form id="banner">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="gameNameSearch" placeholder="Search Games Here">
                             </div>
@@ -56,23 +58,15 @@
         </div>
         <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
     </div>
-    <!-- end of top parallax jumbotron -->
-
-
-
-
+    <!-- end of top parallax jumbotron/search -->
     <!-- start of news articles -->
     <div class="container-fluid">
-
-
         <!-- buttons start -->
         <div class="row">
             <div class="col s12" id="buttonRender">
             </div>
         </div>
         <!-- buttons end -->
-
-
         <hr>
         <div class="row row-artist">
             <!-- <div class="col-md-4">
@@ -109,19 +103,10 @@
                 <a class="btn btn-primary" href="#" role="button">Continue Reading</a>
             </div>
         </div>
-
-
         <hr>
-
-        
-
-    <!-- end of news articles -->
-
-
-
-
-    <!--   Icon Section   -->
-    <!-- <div class="container">
+        <!-- end of news articles -->
+        <!--   Icon Section   -->
+        <!-- <div class="container">
         <div class="section">
             <div class="row">
                 <div class="col s12 m4">
@@ -155,110 +140,103 @@
             </div>
         </div>
     </div> -->
-    <!-- icon section end -->
-
-
-
-    <!-- Twitch parallax start -->
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <!-- <div class="row center">
+        <!-- icon section end -->
+        <!-- Twitch parallax start -->
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <!-- <div class="row center">
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
         </div> -->
-            </div>
-        </div>
-        <div class="parallax"><img src="images/twitchbackground.png" alt="Unsplashed background img 3"></div>
-    </div>
-    <!-- twitch parallax end -->
-    <!-- insert twitch streams here  -->
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Top Twitch Streamers</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
-                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
-                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
-                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
-                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
-                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                        cubilia Curae;</p>
                 </div>
             </div>
+            <div class="parallax"><img src="images/twitchbackground.png" alt="Unsplashed background img 3"></div>
         </div>
-    </div>
-    <!-- end of twitch streams -->
-
-
-
-
-
-    <!-- comic con parallax start -->
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="images/comiccon.jpg" alt="Unsplashed background img 2"></div>
-    </div>
-    <!-- comic con parallax start -->
-    <!-- text area start -->
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Youtube/Trailers</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
-                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
-                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
-                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
-                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
-                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                        cubilia Curae;</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- text area end -->
-    <!-- Footer Start -->
-    <footer class="page-footer teal">
+        <!-- twitch parallax end -->
+        <!-- insert twitch streams here  -->
         <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">API's Used</h5>
-                    <p class="grey-text text-lighten-4">Insert information about API's used here</p>
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+                        <h4>Top Twitch Streamers</h4>
+                        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                            scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
+                            fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+                            ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus.
+                            Aliquam
+                            eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie.
+                            Morbi
+                            massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris,
+                            non
+                            tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                            cubilia Curae;</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="brown-text text-lighten-3" href="#">Game Finder LLC.</a>
+        <!-- end of twitch streams -->
+        <!-- test -->
+        <!-- comic con parallax start -->
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material
+                            Design</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="images/comiccon.jpg" alt="Unsplashed background img 2"></div>
+        </div>
+        <!-- comic con parallax start -->
+        <!-- text area start -->
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+                        <h4>Youtube/Trailers</h4>
+                        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                            scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
+                            fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+                            ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus.
+                            Aliquam
+                            eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie.
+                            Morbi
+                            massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris,
+                            non
+                            tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                            cubilia Curae;</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-    <!-- footer end -->
-
-
-
-
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/javascript.js"></script>
-
+        <!-- text area end -->
+        <!-- Footer Start -->
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">API's Used</h5>
+                        <p class="grey-text text-lighten-4">Insert information about API's used here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by <a class="brown-text text-lighten-3" href="#">Game Finder LLC.</a>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/app.js"></script>
 </body>
 
 </html>
