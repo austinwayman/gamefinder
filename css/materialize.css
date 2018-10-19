@@ -6099,16 +6099,16 @@ label {
    ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
-  color: red;
+  color: #d1d1d1;
 }
 ::-moz-placeholder {
-  color: red;
+  color: #d1d1d1;
 }
 :-ms-input-placeholder {
-  color: red;
+  color: #d1d1d1;
 }
 ::placeholder {
-  color: red;
+  color: #d1d1d1;
 }
 
 /* Text inputs */
