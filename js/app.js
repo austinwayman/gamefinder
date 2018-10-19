@@ -83,6 +83,7 @@ $("#find-button").on("click", function (event) {
             renderGameInfo(response.articles[i]);
 
     })
+   
 
 
 });
