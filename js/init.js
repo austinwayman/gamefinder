@@ -41,4 +41,7 @@ $.ajax({
     $("$row").append(articleTitle, articleAuthor, snippet, articleLink);
     $("main-div").append($row);
   }
-})
+});
+
+var queryURL = "https://www.gamespot.com/api/games/?api_key=[edae40567c53a4c14ecb4d8f94ab3efa38ba9f9c]";
+console.log();
