@@ -74,12 +74,20 @@ $(document).on("click", ".searchTerm", function (event) {
 function renderGameInfo(response) {
 
     $(".articleTitle").text(response.title);
-    $(".publishDate").text(response.publishedAt);
+    $(".publishDate").text(getDate(response.publishedAt));
+    console.log("hey s")
     $(".articleAuthor").text(response.author);
     $(".actualSnippet").text(response.description);
 
     $(".linkButton").attr("href", response.url);
     $(".linkButton").attr("target", "_blank");
+}
+
+function getDate(date){
+    console.log("hedeeyyyy")
+    var dateArr = date.split("")
+    var index = dateArr.indexOf("T");
+    return dateArr.slice(0, index).join("");
 }
 
 
@@ -110,7 +118,7 @@ function createDiv(response, index) {
 
     h3SpanFirstChild.text(response.title);
 
-    divRow.append("<h4> Publish Date: <span class='publishDate'>" +response.publishedAt);
+    divRow.append("<h4> Publish Date: <span class='publishDate'>" +getDate(response.publishedAt));
     divRow.append("<h4>Article Author: <span class='articleAuthor'>"+response.author);
     divRow.append("<h4>Description:");
     divRow.append("<p class='actualSnippet'>" + response.description);
@@ -156,3 +164,4 @@ function createButtons(value) {
     $divSpot.append($button);
 
 }
+
