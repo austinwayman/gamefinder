@@ -113,7 +113,7 @@ function createDiv(response, index) {
     divRow.append("<p class='actualSnippet'>" + response.description);
     divRow.append("<a class='btn btn-primary linkButton' href='"+ response.url +"' target='_blank' role='button'>Continue Reading");
 
-    divRow.append("<hr>")
+    $newDiv.append("<hr>")
 
 
     $newDiv.append(divRow);
