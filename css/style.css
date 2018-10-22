@@ -66,7 +66,7 @@
  }
  
  img {
-   margin: 20px 5px 0px 5px;
+   margin: 60px 5px 0px 5px;
  }
  
  .textColumn {
@@ -100,6 +100,8 @@
  .hide {
   display:none;
 }
+
+
 
 .intro{
   margin: 0 auto;

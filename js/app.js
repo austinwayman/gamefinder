@@ -34,8 +34,9 @@ $("#banner").on("submit", function (e) {
 $("#find-button").on("click", function (event) {
     event.preventDefault();
 
-    $(".intro").removeClass("shown");
-    $(".intro").addClass("hide");
+    $(".intro").removeClass("hide");
+    $(".foo").removeClass("hide");
+    //$(".intro").addClass("hide");
 
     var searchTerm = $("#gameNameSearch").val();
     console.log(searchTerm);
@@ -52,6 +53,7 @@ $(document).on("click", ".btn-search", function () {
 
     $(".intro").removeClass("shown");
     $(".intro").addClass("hide");
+    $(".foo").removeClass("hide");
 
 })
 
@@ -61,6 +63,7 @@ $(document).on("click", ".searchTerm", function (event) {
 
     $(".intro").removeClass("shown");
     $(".intro").addClass("hide");
+    $(".foo").removeClass("hide");
 
     console.log($(this).val());
     var searchTerm = $(this).val();
@@ -113,7 +116,7 @@ function createDiv(response, index) {
     divRow.append("<p class='actualSnippet'>" + response.description);
     divRow.append("<a class='btn btn-primary linkButton' href='"+ response.url +"' target='_blank' role='button'>Continue Reading");
 
-    divRow.append("<hr>")
+    $newDiv.append("<hr>")
 
 
     $newDiv.append(divRow);
