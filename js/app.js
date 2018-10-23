@@ -125,7 +125,7 @@ function makeThingsDryYoTwitch(gameID) {
     }).then(function (response) {
         console.log(response);
         $(".putTwitchTopClips").empty();
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 3; i++) {
             createIframe(response.data[i]);
         }
     });
@@ -232,7 +232,7 @@ function createIframe(response, index) {
     divRow.append("<h4>View Count: " + response.view_count);
     divRow.append("<a class='btn btn-primary linkButton' href='" + response.url + "' target='_blank' role='button'>Watch More");
 
-    $newDiv.append("<hr>")
+    $newDiv.prepend("<hr>")
 
 
     $newDiv.append(divRow);
