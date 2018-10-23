@@ -1,3 +1,5 @@
+
+// Firebase start
 var config = {
     apiKey: "AIzaSyB8Eza7nSWdUNHJobfNN6tQcmXzYklpIlc",
     authDomain: "project1-group.firebaseapp.com",
@@ -10,21 +12,36 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+// creates buttons based on new child added in fire base
 database.ref().orderByChild("dateAdded").limitToLast(5).on("child_added", function (snapshot) {
     createButtons(snapshot.val().searchTerm);
 });
+// fire base end
 
 
+
+// event listeners
 $("#banner").on("submit", function (e) {
     e.preventDefault();
-    $(".intro").removeClass("shown");
-    $(".intro").addClass("hide");
+
     console.log("submitted!");
 
     var searchTerm = $("#gameNameSearch").val();
-
+    
     database.ref().push({
         searchTerm: searchTerm
+    });
+    
+    var queryURL = "https://api.twitch.tv/helix/games?name=" + searchTerm;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: { "Client-ID": "4ankfq8lphigd442f20y4kro0bnoki" }
+
+    }).then(function (response) {
+        var id = response.data[0].id;
+        makeThingsDryYoTwitch(id);
     });
 
     makeThingsDryYo(searchTerm);
@@ -34,10 +51,6 @@ $("#banner").on("submit", function (e) {
 $("#find-button").on("click", function (event) {
     event.preventDefault();
 
-    $(".intro").removeClass("hide");
-    $(".foo").removeClass("hide");
-    //$(".intro").addClass("hide");
-
     var searchTerm = $("#gameNameSearch").val();
     console.log(searchTerm);
 
@@ -45,53 +58,108 @@ $("#find-button").on("click", function (event) {
         searchTerm: searchTerm
     });
 
+    var queryURL = "https://api.twitch.tv/helix/games?name=" + searchTerm;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: { "Client-ID": "4ankfq8lphigd442f20y4kro0bnoki" }
+
+    }).then(function (response) {
+        var id = response.data[0].id;
+        makeThingsDryYoTwitch(id);
+    });
+    
+
     makeThingsDryYo(searchTerm);
 
 });
-
-$(document).on("click", ".btn-search", function () {
-
-    $(".intro").removeClass("shown");
-    $(".intro").addClass("hide");
-    $(".foo").removeClass("hide");
-
-})
 
 $(document).on("click", ".searchTerm", function (event) {
 
     event.preventDefault();
 
-    $(".intro").removeClass("shown");
-    $(".intro").addClass("hide");
-    $(".foo").removeClass("hide");
-
     console.log($(this).val());
     var searchTerm = $(this).val();
 
     makeThingsDryYo(searchTerm);
+
+    makeThingsDryYoTwitch($(this).attr("data-game-id"));
+
 });
 
-function renderGameInfo(response) {
 
-    $(".articleTitle").text(response.title);
-    $(".publishDate").text(getDate(response.publishedAt));
-    console.log("hey s")
-    $(".articleAuthor").text(response.author);
-    $(".actualSnippet").text(response.description);
+// Drys out the ign ajax calls with an error catcher incase no itemes returned
+function makeThingsDryYo(searchTerm) {
+    var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
 
-    $(".linkButton").attr("href", response.url);
-    $(".linkButton").attr("target", "_blank");
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        console.log(response);
+
+        $(".putArticlesHere").empty();
+        if (response.articles.length < 1) {
+            $(".foo").addClass("hide");
+            alert("NO RESULTS");
+        }
+        else {
+            $(".foo").removeClass("hide");
+            for (var i = 0; i < response.articles.length; i++) {
+                createDiv(response.articles[i], i);
+            }
+        }
+
+    });
+
 }
 
-function getDate(date){
-    console.log("hedeeyyyy")
-    var dateArr = date.split("")
-    var index = dateArr.indexOf("T");
-    return dateArr.slice(0, index).join("");
+function makeThingsDryYoTwitch(gameID) {
+
+    var queryURL = "https://api.twitch.tv/helix/clips?game_id=" + gameID;
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: { "Client-ID": "4ankfq8lphigd442f20y4kro0bnoki" }
+    }).then(function (response) {
+        console.log(response);
+        $(".putTwitchTopClips").empty();
+        for (var i = 0; i < 5; i++) {
+            createIframe(response.data[i]);
+        }
+    });
 }
 
 
+// function to render buttons.
+function createButtons(value) {
+    var $divSpot = $("#buttonRender");
 
+    var $button = $("<button>");
+
+    $button.attr("href", "#");
+    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm btn-search");
+    $button.attr("value", value);
+    $button.text(value);
+
+    var queryURL = "https://api.twitch.tv/helix/games?name=" + value;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: { "Client-ID": "4ankfq8lphigd442f20y4kro0bnoki" }
+
+    }).then(function (response) {
+        var id = response.data[0].id;
+        $button.attr("data-game-id", id);
+        $divSpot.append($button);
+
+    });
+
+}
+
+// Functions to render
 function createDiv(response, index) {
 
     var $renderSpot = $(".putArticlesHere");
@@ -118,11 +186,11 @@ function createDiv(response, index) {
 
     h3SpanFirstChild.text(response.title);
 
-    divRow.append("<h4> Publish Date: <span class='publishDate'>" +getDate(response.publishedAt));
-    divRow.append("<h4>Article Author: <span class='articleAuthor'>"+response.author);
+    divRow.append("<h4> Publish Date: <span class='publishDate'>" + getDate(response.publishedAt));
+    divRow.append("<h4>Article Author: <span class='articleAuthor'>" + response.author);
     divRow.append("<h4>Description:");
     divRow.append("<p class='actualSnippet'>" + response.description);
-    divRow.append("<a class='btn btn-primary linkButton' href='"+ response.url +"' target='_blank' role='button'>Continue Reading");
+    divRow.append("<a class='btn btn-primary linkButton' href='" + response.url + "' target='_blank' role='button'>Continue Reading");
 
     $newDiv.append("<hr>")
 
@@ -132,36 +200,49 @@ function createDiv(response, index) {
 
 }
 
-function makeThingsDryYo(searchTerm) {
-    var queryURL = "https://newsapi.org/v2/everything?sources=ign&q=" + searchTerm + "&pageSize=3&apiKey=777df2480edd4e6fb87cb0ce9a5ba5bb";
+function createIframe(response, index) {
+    var $renderSpot = $(".putTwitchTopClips");
+    var $newDiv = $("<div class='row row-artist containerImg " + index + "' >");
 
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-    }).then(function (response) {
-        console.log(response);
+    var divCol = $("<div class='col-md-6' style='padding-left: 0px;  padding-right: 0px;'>");
+    var newImage = $("<iframe>");
+    newImage.attr("title", "TwitchClip");
+    newImage.attr("width", 520);
+    newImage.attr("height", 340);
+    newImage.attr("src", response.embed_url);
+    newImage.attr("id", "twitchIfram");
+    newImage.attr("class", "ifram-responsive");
 
-        $(".putArticlesHere").empty();
+    divCol.append(newImage);
+    $newDiv.append(divCol);
 
-        for (var i = 0; i < response.articles.length; i++) {
-            createDiv(response.articles[i], i);
-        }
+    var divRow = $("<div class='textColumn col-md-6'>");
+    var divPageHeader = $("<div class=page-header'>");
+    var h3FrirstChild = $("<h3 class='newsTitle'>");
+    var h3SpanFirstChild = $("<span class='clipTitle'>");
 
-    });
+    h3FrirstChild.append(h3SpanFirstChild);
+    divPageHeader.append(h3FrirstChild);
+    divRow.append(divPageHeader);
+
+    h3SpanFirstChild.text(response.title);
+
+    divRow.append("<h4> Publish Date: <span class='publishDate'>" + getDate(response.created_at));
+    divRow.append("<h4>Broadcaster: <span class='articleAuthor'>" + response.broadcaster_name)
+    divRow.append("<h4>View Count: " + response.view_count);
+    divRow.append("<a class='btn btn-primary linkButton' href='" + response.url + "' target='_blank' role='button'>Watch More");
+
+    $newDiv.append("<hr>")
+
+
+    $newDiv.append(divRow);
+    $renderSpot.prepend($newDiv);
 }
 
-function createButtons(value) {
-    var $divSpot = $("#buttonRender");
-
-    var $button = $("<button>");
-
-    $button.attr("href", "#");
-    $button.attr("id", "searchTerm");
-    $button.attr("class", "btn-large waves-effect waves-light teal lighten-1 searchTerm btn-search");
-    $button.attr("value", value);
-    $button.text(value);
-
-    $divSpot.append($button);
-
+// Helper Functions
+function getDate(date) {
+    console.log("hedeeyyyy")
+    var dateArr = date.split("")
+    var index = dateArr.indexOf("T");
+    return dateArr.slice(0, index).join("");
 }
-
