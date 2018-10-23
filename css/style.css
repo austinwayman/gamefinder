@@ -107,3 +107,12 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.no-pad-bot {
+  margin-bottom: 20px;
+}
+
+.putTwitchTopClips {
+  margin: 0;
+  width: auto;
+}
