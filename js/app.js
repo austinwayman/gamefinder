@@ -98,14 +98,14 @@ function makeThingsDryYo(searchTerm) {
         method: "GET",
     }).then(function (response) {
         console.log(response);
+        $(".foo").removeClass("hide");
 
         $(".putArticlesHere").empty();
         if (response.articles.length < 1) {
-            $(".foo").addClass("hide");
+            $(".putArticlesHere").prepend("<h4>No Articles Found :-(");
             alert("NO RESULTS");
         }
         else {
-            $(".foo").removeClass("hide");
             for (var i = 0; i < response.articles.length; i++) {
                 createDiv(response.articles[i], i);
             }
