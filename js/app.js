@@ -103,7 +103,6 @@ function makeThingsDryYo(searchTerm) {
         $(".putArticlesHere").empty();
         if (response.articles.length < 1) {
             $(".putArticlesHere").prepend("<h4>No Articles Found :-(");
-            alert("NO RESULTS");
         }
         else {
             for (var i = 0; i < response.articles.length; i++) {
