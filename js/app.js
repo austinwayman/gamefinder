@@ -177,11 +177,11 @@ function createDiv(response, index) {
 
     var divRow = $("<div class='textColumn col-md-8'>");
     var divPageHeader = $("<div class=page-header'>");
-    var h3FrirstChild = $("<h3 class='newsTitle'>");
+    var h3FirstChild = $("<h3 class='newsTitle'>");
     var h3SpanFirstChild = $("<span class='articleTitle'>");
 
-    h3FrirstChild.append(h3SpanFirstChild);
-    divPageHeader.append(h3FrirstChild);
+    h3FirstChild.append(h3SpanFirstChild);
+    divPageHeader.append(h3FirstChild);
     divRow.append(divPageHeader);
 
     h3SpanFirstChild.text(response.title);
